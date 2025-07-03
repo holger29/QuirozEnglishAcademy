@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - English Quiroz Academy</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <div class="registro-container">
+        <div class="registro-box">
+            <p>Usted está a punto de registrarse, por favor llene todos los campos requeridos.</p>
+
+            <form id="registroForm" name="formulario2" action="procesaDatos.php" method="GET">
+                <input type="text" id="nombre" name="nombre" placeholder="nombre:" required>
+                <input type="text" id="apellidos" name="apellidos" placeholder="apellidos:" required>
+                <input type="email" id="email" name="userName" placeholder="E-mail:" required>
+                <input type="password" id="password" name="password" placeholder="Password:" required>
+                <input type="tel" id="telefono" name="telefono" placeholder="Contact number:" required>
+                <input type="text" id="direccion" name="direccion" placeholder="Address:" required>
+                
+                
+                <button type="submit" id="btnRegistrarse">Registrarse</button>
+            </form>
+            <a href="index.html" class="volver-atras">Volver atrás</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

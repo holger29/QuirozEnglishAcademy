@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Aprendizaje</title>
+    <link rel="stylesheet" href="styles4.css">
+</head>
+<body>
+    <header>
+        <div class="search-container">
+            <input type="text" placeholder="Buscar">
+            <button>OK</button>
+        </div>
+        <nav>
+            <a href="#">Home Page</a>
+            <div class="menu-container">
+                <span class="usuario" id="usuario">@Usuario ▼</span>
+                <div class="menu" id="menu">
+                    <a href="index.html" id="cerrarSesion">Cerrar sesión</a>
+                    <a href="#" id="btnConfig">Configuración</a>
+                </div>
+            </div>   
+        </nav>
+    </header>
+
+    <main>
+        <section class="section1">
+            <button class="btn_accion">Clases en vivo</button>
+            <button class="btn_accion">Tareas y evaluaciones</button>
+            <button class="btn_accion">Proyectos</button>
+            <button class="btn_accion">Foro</button>
+            <button class="btn_accion">Certificaciones</button>
+        </section>
+
+        <section class="section2">
+            <div class="dropdown">
+                <!--<label for="grabaciones">Grabaciónes</label> -->
+                <select id="grabaciones">
+                    <option value="1">Clase presentación #1</option>
+                    <option value="2">verbo tobe #2</option>
+                    <option value="2">Gramatica inglesa #3</option>
+                    <option value="2">verbos irregulares #4</option>
+                </select>
+            </div>
+
+            <div class="video-grid">
+                <img src="imagenes/lesson 1.jpg" alt="Lesson 1">
+                <img src="imagenes/lesson 2.jpg" alt="Lesson 2">
+                <img src="imagenes/lesson 1.jpg" alt="Lesson 3">
+                <img src="imagenes/lesson 2.jpg" alt="Lesson 4">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="links">
+            <a href="#">Política de privacidad</a>
+            <a href="#">Términos y condiciones</a>
+            <a href="#">Se parte de nuestro equipo</a>
+            <span href="#">&copy;Copy Right. Todos los derecos reservados 2025</span>
+        </div>
+
+        <div class="social-icons">
+            <img src="imagenes/facebook_logo.png" alt="Facebook">
+            <img src="imagenes/instagram.png" alt="Instagram">
+            <img src="imagenes/YouTube.png" alt="YouTube">
+            <img src="imagenes/whatsapp.png" alt="WhatsApp">
+            <div class="contact">
+                <input type="test" placeholder="Contáctanos:">
+                <button>OK</button>
+            </div>
+        </div>
+
+    </footer>
+    <!--<script src="script.js"></script>-->
+    <script>
+        //para el enlase de configuración en la homepage.html
+        document.getElementById('btnConfig').addEventListener('click', function()
+        {
+            alert('Configuración no disponible, esta versión es de prueba.');
+        });
+        //para los botones de clase btn_accion
+        const btnAccion = document.querySelectorAll('.btn_accion');
+        btnAccion.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                alert('Funcionalidad no disponible, esta versión es de prueba.');
+            });
+        });
+    </script>
+</body>
+</html>
