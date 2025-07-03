@@ -1,43 +1,51 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Procesa Datos</title>
-    <link rel="stylesheet" href="styles3.css">
-</head>
-<body>
-    <?php
-        // obtener los datos formulario de registro
-        $nombre=$_GET['nombre'];
-        $apellidos=$_GET['apellidos'];
-        $userName=$_GET['userName'];
-        $password=$_GET['password']; 
-        $telefono=$_GET['telefono'];  
-        $direccion=$_GET['direccion'];
-    ?> 
-    <div>
-        <h1>BIENVENID@</h1>
-        <p>
-            <?php
-                echo "Señor(a) $nombre usted se ha registrado correctamente";
-            ?>
-        </p>
-        <p>
-        
-        <p>
-            <?php 
-                echo "Nombre de usuario: ". $userName ."</br>";
-                echo "Contraseña: ". $password ."</br>";
-            ?>
-        </p>
-        <p><input type="button" value="Ir a login"></p>
+<?php
+// Configuración de la conexión
+$host = "localhost";
+$usuario = "root";
+$contrasena = ""; // por el momento no tengo contraseña
+$base_datos = "bd_quirozacademy";
 
-    </div>
-    <script>
-        document.querySelector('input[type="button"]').addEventListener('click', function() {
-            window.location.href = 'index.html';
-        });
-    </script>
-</body>
-</html>
+// Crear conexión
+$conn = new mysqli($host, $usuario, $contrasena, $base_datos);
+
+// Verificar conexión
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
+
+// Verificar si llegaron los datos por GET
+if (
+    isset($_GET['nombre']) &&
+    isset($_GET['apellidos']) &&
+    isset($_GET['userName']) &&
+    isset($_GET['password']) &&
+    isset($_GET['telefono']) &&
+    isset($_GET['direccion'])
+) {
+    // Capturar y limpiar datos
+    $nombre = $conn->real_escape_string($_GET['nombre']);
+    $apellidos = $conn->real_escape_string($_GET['apellidos']);
+    $email = $conn->real_escape_string($_GET['userName']);
+    $password = $conn->real_escape_string($_GET['password']);//Por el momento la contraseña no esta emcriptada
+    //$password = password_hash($_GET['password'], PASSWORD_DEFAULT); //con este codigo la contraseña se encripta
+    $telefono = $conn->real_escape_string($_GET['telefono']);
+    $direccion = $conn->real_escape_string($_GET['direccion']);
+
+    // Consulta de inserción
+    $sql = "INSERT INTO usuarios (nombre, apellidos, email, password, telefono, direccion)
+            VALUES ('$nombre', '$apellidos', '$email', '$password', '$telefono', '$direccion')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "<h2>¡Registro exitoso!</h2>";
+        echo "<p>Bienvenido a English Quiroz Academy, $nombre.</p>";
+        echo "<a href='index.html'>Volver a inicio</a>";
+    } else {
+        echo "Error al registrar: " . $conn->error;
+    }
+
+} else {
+    echo "Todos los campos son obligatorios.";
+}
+
+$conn->close();
+?>
