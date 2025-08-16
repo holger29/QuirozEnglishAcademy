@@ -1,0 +1,113 @@
+{
+    "info": {
+        "name": "EnglishQuirozAcademy API",
+        "_postman_id": "12345-abcde",
+        "description": "Colecci\u00f3n de pruebas de API para CRUD de usuarios en PHP (Proyecto EnglishQuirozAcademy).",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Listar usuarios",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost/QuirozEnglishAcademy/CRUD_adminUsuarios/adminUsuarios.php",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "path": [
+                        "QuirozEnglishAcademy",
+                        "CRUD_adminUsuarios",
+                        "adminUsuarios.php"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Agregar usuario",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"nombre\": \"Pedro\",\n    \"apellidos\": \"Mart\\u00ednez\",\n    \"email\": \"pedro@example.com\",\n    \"password\": \"123456\",\n    \"telefono\": \"3004567890\",\n    \"direccion\": \"Calle 10 #5-23\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost/QuirozEnglishAcademy/CRUD_adminUsuarios/agregarUsuario.php",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "path": [
+                        "QuirozEnglishAcademy",
+                        "CRUD_adminUsuarios",
+                        "agregarUsuario.php"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Editar usuario",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"id\": 1,\n    \"nombre\": \"Pedro actualizado\",\n    \"apellidos\": \"Mart\\u00ednez\",\n    \"email\": \"pedro2@example.com\",\n    \"telefono\": \"3009876543\",\n    \"direccion\": \"Carrera 15 #20-33\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost/QuirozEnglishAcademy/CRUD_adminUsuarios/editarUsuario.php",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "path": [
+                        "QuirozEnglishAcademy",
+                        "CRUD_adminUsuarios",
+                        "editarUsuario.php"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Eliminar usuario",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"id\": 1\n}"
+                },
+                "url": {
+                    "raw": "http://localhost/QuirozEnglishAcademy/CRUD_adminUsuarios/eliminarUsuario.php",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "path": [
+                        "QuirozEnglishAcademy",
+                        "CRUD_adminUsuarios",
+                        "eliminarUsuario.php"
+                    ]
+                }
+            }
+        }
+    ]
+}
