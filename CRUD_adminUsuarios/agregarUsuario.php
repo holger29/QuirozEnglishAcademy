@@ -30,10 +30,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Agregar Usuario</title>
+    <link rel="stylesheet" href="../estilos_css/formulariosCRUD.css">
 </head>
 <body>
-    <h2>Agregar nuevo usuario</h2>
+    
     <form method="POST" action="">
+        <h2>Agregar nuevo usuario</h2>
         <input type="text" name="nombre" placeholder="Nombre" required><br>
         <input type="text" name="apellidos" placeholder="Apellidos" required><br>
         <input type="email" name="email" placeholder="Email" required><br>
@@ -41,8 +43,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="tel" name="telefono" placeholder="Teléfono"><br>
         <input type="text" name="direccion" placeholder="Dirección"><br>
         <button type="submit">Guardar</button>
+         <a href="adminUsuarios.php">Volver al listado</a>
     </form>
     <br>
-    <a href="adminUsuarios.php">Volver al listado</a>
+   
 </body>
 </html>

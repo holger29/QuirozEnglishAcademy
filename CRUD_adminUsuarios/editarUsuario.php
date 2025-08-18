@@ -46,10 +46,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Editar Usuario</title>
+    <link rel="stylesheet" href="../estilos_css/formulariosCRUD.css">
 </head>
 <body>
-    <h2>Editar Usuario</h2>
+  
     <form method="POST" action="">
+          <h2>Editar Usuario</h2>
         <input type="text" name="nombre" value="<?= $usuario['nombre'] ?>" required><br>
         <input type="text" name="apellidos" value="<?= $usuario['apellidos'] ?>" required><br>
         <input type="email" name="email" value="<?= $usuario['email'] ?>" required><br>
@@ -57,8 +59,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="tel" name="telefono" value="<?= $usuario['telefono'] ?>"><br>
         <input type="text" name="direccion" value="<?= $usuario['direccion'] ?>"><br>
         <button type="submit">Actualizar</button>
+        <a href="adminUsuarios.php">Volver al listado</a>
     </form>
     <br>
-    <a href="adminUsuarios.php">Volver al listado</a>
+    
 </body>
 </html>
